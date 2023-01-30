@@ -17,7 +17,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 class DemoFind_Element_By_Id():
     def locate_by_id_demo(self, login=None):
-        #driver=webdriver.Chrome(executable_path=ChromeDriverManager().install())
         driver=webdriver.Chrome(service=Service(ChromeDriverManager().install()))
         driver.get("https://secure.yatra.com/social/common/yatra/signin.htm")
         searchbox=driver.find_element(By.CLASS_NAME , 'yt-sme-mobile-input.required_field.email-login-box')
@@ -25,6 +24,6 @@ class DemoFind_Element_By_Id():
         time.sleep(5)
         cont=driver.find_element(By.ID , 'login-continue-btn')
         cont.click()
-        time.sleep(10)
+        time.sleep(5)
 findbyid=DemoFind_Element_By_Id()
 findbyid.locate_by_id_demo()
